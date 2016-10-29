@@ -7,6 +7,8 @@ angular.module('myApp', [])
         'self',
         'https://api.fixer.io/**'
       ]);
+        $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
     }])
  
   .controller('ConversionController', ['$scope','$http', function($scope, $http){ 
