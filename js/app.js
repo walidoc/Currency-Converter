@@ -4,7 +4,7 @@ angular.module('myApp', [])
   .controller('ConversionController', ['$scope','$http', function($scope, $http){ 
 
       $scope.rates= {};
-      $http.get("https://api.fixer.io/latest?base=ZAR")
+      $http.jsonp("https://api.fixer.io/latest?base=ZAR")
       .then(function(response){ 
           $scope.rates = response.data.rates;
           $scope.toType= $scope.rates.AUD;
