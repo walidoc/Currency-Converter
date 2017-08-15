@@ -1,16 +1,6 @@
 'use strict';
 
 angular.module('myApp', [])
-    .config(['$sceDelegateProvider', function($sceDelegateProvider) {
-      // We must whitelist the JSONP endpoint that we are using to show that we trust it
-      $sceDelegateProvider.resourceUrlWhitelist([
-        'self',
-        'https://api.fixer.io/**'
-      ]);
-        $httpProvider.defaults.useXDomain = true;
-        delete $httpProvider.defaults.headers.common['X-Requested-With'];
-    }])
- 
   .controller('ConversionController', ['$scope','$http', function($scope, $http){ 
 
       $scope.rates= {};
